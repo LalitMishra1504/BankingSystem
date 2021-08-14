@@ -75,6 +75,15 @@ const ViewUser = () => {
     }, [])
     return (
         <>
+         <details>
+                    <summary></summary>
+                    <nav class="menu">
+                        <a href="/">Home</a>
+                        <a href="/viewuser">ViewUser</a>
+                        <a href="/transfermoney">Transfer</a>
+                        <a href="/transhistory">TransactionHistory</a>
+                    </nav>
+                </details>
             <section className="header1">
                 <nav className="navbar">
                     <img className="mainlogo" src="./images/banklogo.jpg"></img>
@@ -90,14 +99,11 @@ const ViewUser = () => {
                         </ul>
                     </div>
                 </nav>
-                <button style={{
-                    background: "Red",
-                    border: "none",
-                    textAlign: "center",
-                    marginLeft: "40%"
-                }} onClick={() => {
+                <div className="text-center">
+                <div className="btn btn-primary btn-group-lg btn-lg responsive-width" onClick={() => {
                     setopenmodal(true);
-                }}>Add Customer</button>
+                }}>Add Customer</div>
+                </div>
                 <Modal isOpen={openmodal}>
                     <h2 style={{
                         textAlign: "center",
@@ -117,13 +123,8 @@ const ViewUser = () => {
                             </div>
                         </form>
                     </div>
-                    <div>
-                        <button onClick={customerdetails} style={{
-                            background: "Red",
-                            border: "none",
-                            textAlign: "center",
-                            marginLeft: "40%"
-                        }}>Save</button>
+                    <div className="text-center">
+                        <button className="btn btn-success btn-lg" onClick={customerdetails}>Save</button>
                     </div>
                 </Modal>
                 <div className="main-container">
@@ -139,9 +140,11 @@ const ViewUser = () => {
                                     <h4 className="text"><i className="fas fa-list-ol logo"></i>ACCOUNT-NUMBER:<h5>{res.acnumber}</h5></h4>
                                     <h4 className="text"><i className="fas fa-rupee-sign logo"></i>BALANCE:<h5>{res.bbalance}</h5></h4>
                                 </div>
-                                <button className="btn" onClick={()=>{
+                                <div className="text-center">
+                                <button className="btn btn-danger" onClick={()=>{
                                     gotoloc(res._id)
                                 }}>USER INFO</button>
+                                </div>
                             </div>
                         )
                     })

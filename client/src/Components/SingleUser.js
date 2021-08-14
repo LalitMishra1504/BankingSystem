@@ -22,6 +22,15 @@ const SingleUser = () => {
     return (
         <>
         {console.log(userdata.name)}
+        <details>
+                    <summary></summary>
+                    <nav class="menu">
+                        <a href="/">Home</a>
+                        <a href="/viewuser">ViewUser</a>
+                        <a href="/transfermoney">Transfer</a>
+                        <a href="/transhistory">TransactionHistory</a>
+                    </nav>
+                </details>
           <section className="header1">
           <nav className="navbar">
                     <img className="mainlogo" src="/images/banklogo.jpg" alt="image"></img>
@@ -47,7 +56,9 @@ const SingleUser = () => {
                             <h4 className="text"><i className="fas fa-list-ol logo"></i>ACCOUNT-NUMBER:<h5>{userdata.acnumber}</h5></h4>
                             <h4 className="text"><i className="fas fa-rupee-sign logo"></i>BALANCE:<h5>{userdata.bbalance}</h5></h4>
                         </div>
-                        <button className="btn">TransferMoney</button>
+                        <div className="text-center">
+                        <button className="btn btn-danger">TransferMoney</button>
+                        </div>
                     </div>
                 </div>
         </>

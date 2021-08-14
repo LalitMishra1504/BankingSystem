@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar';
 import SingleUser from './Components/SingleUser';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import TransferMoney from './Components/TransferMoney';
+import TransactionHistory from './Components/TransactionHistory';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/transfermoney">
            <TransferMoney/>
+        </Route>
+        <Route path="/transhistory">
+          <TransactionHistory/>
         </Route>
       </Switch>
     </Router>

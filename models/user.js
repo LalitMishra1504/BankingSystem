@@ -14,7 +14,11 @@ const userSchema=new mongoose.Schema({
     },
     bbalance:{
         type:Number,
-        reuire:true
+        require:true
+    },
+    date:{
+       type:Date,
+       default:Date.now
     }
 })
 
